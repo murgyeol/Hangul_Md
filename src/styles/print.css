@@ -1,0 +1,107 @@
+/* ========== Print Styles ========== */
+@media screen {
+  .print-container {
+    display: none !important;
+  }
+}
+
+@media print {
+  /* Hide screen-only elements */
+  .titlebar,
+  .toolbar,
+  .hf-panel,
+  .editor-canvas {
+    display: none !important;
+  }
+
+  .print-container {
+    display: block !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 20mm;
+  }
+
+  .print-page {
+    page-break-after: always;
+    position: relative;
+    width: 100%;
+  }
+
+  .print-page:last-child {
+    page-break-after: auto;
+  }
+
+  .print-header,
+  .print-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 9pt;
+    color: #888888;
+  }
+
+  .print-header {
+    margin-bottom: 8mm;
+  }
+
+  .print-footer {
+    margin-top: 8mm;
+  }
+
+  .print-page-body {
+    width: 100%;
+  }
+
+  /* Hide page-break nodes in print */
+  .page-break-node {
+    display: none;
+  }
+
+  /* Typography in print body - inherits .tiptap-content */
+  .print-page-body.tiptap-content h1 {
+    font-size: 24pt;
+    font-weight: bold;
+  }
+
+  .print-page-body.tiptap-content h2 {
+    font-size: 20pt;
+    font-weight: bold;
+  }
+
+  .print-page-body.tiptap-content h3 {
+    font-size: 16pt;
+    font-weight: bold;
+  }
+
+  .print-page-body.tiptap-content pre {
+    background: #f5f5f5;
+    padding: 8px;
+    border-radius: 4px;
+    font-family: Consolas, 'D2Coding', monospace;
+    font-size: 10pt;
+  }
+
+  .print-page-body.tiptap-content table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .print-page-body.tiptap-content th,
+  .print-page-body.tiptap-content td {
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+  }
+
+  .print-page-body.tiptap-content img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .print-page-body.tiptap-content blockquote {
+    border-left: 3px solid #ccc;
+    padding-left: 12px;
+    color: #555;
+  }
+}
