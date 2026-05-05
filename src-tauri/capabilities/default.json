@@ -1,0 +1,14 @@
+{
+  "identifier": "default",
+  "description": "Default permissions for the app",
+  "windows": ["main"],
+  "permissions": [
+    "fs:allow-read-file",
+    "fs:allow-write-file",
+    "dialog:allow-open",
+    "dialog:allow-save",
+    "dialog:allow-ask",
+    "dialog:allow-message",
+    "shell:allow-open"
+  ]
+}
